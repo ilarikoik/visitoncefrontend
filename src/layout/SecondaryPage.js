@@ -39,7 +39,7 @@ export default function SecondaryPage() {
   );
 
   return (
-    <div className="p-8 min-h-screen w-full bg-slate-700">
+    <div className="p-8 min-h-screen w-full bg-black flex flex-col justify-center items-center">
       <div className="flex flex-row justify-evenly items-center h-60 ">
         <div>
           <h2 className="text-3xl font-bold mb-4 text-white">Error 403</h2>
@@ -47,14 +47,14 @@ export default function SecondaryPage() {
         </div>
         {/* <Button label={"Try home page."} onClick={handleClickHome}></Button> */}
       </div>
-      <div className="bg-slate-700 w-full flex flex-col justify-center items-center p-5">
+      <div className="bg-neutral-900 w-4/5 flex flex-col justify-center items-center p-5 rounded-xl ">
         <div>
           <h3 className="text-xl mb-6 text-white">
             Answer these trivia questions so you can visit once more but thats
             it.
           </h3>
         </div>
-        <div className="w-2/5 bg-slate-800 p-5 rounded-lg mb-6">
+        <div className="w-2/5  p-5 rounded-lg mb-6">
           {trivia.map((item, index) => (
             <div key={index} className="mb-4">
               {/* <h4 className="text-white mb-2">{item.question}</h4> */}

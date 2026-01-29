@@ -11,11 +11,13 @@ export default function TriviaCard({
     (userAnswer || "").toLowerCase() === (correctAnswer || "").toLowerCase();
 
   return (
-    <div className="bg-slate-800 rounded-2xl shadow-lg mb-4 p-4 transition-transform transform hover:scale-[1.01]">
+    <div
+      className={`${isCorrect ? "bg-green-500" : "bg-neutral-100"} rounded-2xl shadow-lg mb-4 p-4 transition-transform transform hover:scale-[1.03]`}
+    >
       <div
-        className={`p-4 rounded-lg ${isCorrect ? "bg-green-500" : "bg-gray-400"}`}
+      // className={`p-4 rounded-lg ${isCorrect ? "bg-green-500" : "bg-neutral-100"}`}
       >
-        <h3 className="text-lg font-semibold text-gray-800 mb-3">{question}</h3>
+        <h3 className="text-lg font-semibold text-black mb-3">{question}</h3>
         <input
           type="text"
           placeholder="Type your answer..."
