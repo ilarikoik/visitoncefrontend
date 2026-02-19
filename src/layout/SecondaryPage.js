@@ -12,8 +12,6 @@ export default function SecondaryPage() {
   const navigate = useNavigate();
   const user = useUser();
 
-  // TODO::: trivian jälkeen rokrolli yotube video aukee
-
   useEffect(() => {
     const getData = async () => {
       setTrivia(await getTrivia());
@@ -31,7 +29,7 @@ export default function SecondaryPage() {
     }
     console.log("resetting user to visit again");
     await resetIpAddress({ ipAddress: user.user.ipAddress });
-    navigate("/");
+    navigate("/rickroll");
   };
 
   // const allcorrect = trivia.every((item) =>
@@ -82,6 +80,13 @@ export default function SecondaryPage() {
           {" "}
           homwewe
         </button>
+        {/* <button
+          onClick={() => navigate("/")}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          {" "}
+          hoeeee
+        </button> */}
 
         {/* <Button
           label={"Want to visit again."}
