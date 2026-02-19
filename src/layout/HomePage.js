@@ -13,7 +13,11 @@ export default function HomePage() {
   useEffect(() => {
     const getData = async () => {
       console.log("tried home page");
-      const res = await getIpAddress({ ipAddress: "123.123.123.123" });
+      const res = await getIpAddress({
+        ipAddress: "123.123.123.123",
+        visti_time: new Date(),
+      });
+      // console.log("response from server:", res);
       setStatus(res.status);
       setUser(res);
       console.log("user status:", res);

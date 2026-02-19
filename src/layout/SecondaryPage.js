@@ -12,6 +12,8 @@ export default function SecondaryPage() {
   const navigate = useNavigate();
   const user = useUser();
 
+  // TODO::: trivian jälkeen rokrolli yotube video aukee
+
   useEffect(() => {
     const getData = async () => {
       setTrivia(await getTrivia());
@@ -32,11 +34,11 @@ export default function SecondaryPage() {
     navigate("/");
   };
 
-  const allcorrect = trivia.every((item) =>
-    item.userAnswer
-      ? item.userAnswer.toLowerCase() === item.answer.toLowerCase()
-      : false,
-  );
+  // const allcorrect = trivia.every((item) =>
+  //   item.userAnswer
+  //     ? item.userAnswer.toLowerCase() === item.answer.toLowerCase()
+  //     : false,
+  // );
 
   return (
     <div className="p-8 min-h-screen w-full bg-black flex flex-col justify-center items-center">
@@ -73,12 +75,20 @@ export default function SecondaryPage() {
           ))}
         </div>
 
-        <Button
+        <button
+          onClick={handleClick}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          {" "}
+          homwewe
+        </button>
+
+        {/* <Button
           label={"Want to visit again."}
           onClick={handleClick}
           allCorrect={allcorrect}
           className={`${allcorrect ? "bg-gray-500" : "bg-blue-500 hover:bg-blue-700"}  text-white font-bold py-2 px-4 rounded`}
-        ></Button>
+        ></Button> */}
       </div>
     </div>
   );
