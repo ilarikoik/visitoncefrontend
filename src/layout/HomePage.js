@@ -7,17 +7,15 @@ import Navbar from "../components/Navbar";
 
 export default function HomePage() {
   const [status, setStatus] = useState(null);
-  const setUser = useSetUser();
-  const user = useUser();
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const getData = async () => {
-      console.log("tried home page");
       const res = await getIpAddress();
-      // console.log("response from server:", res);
       setStatus(res.status);
       setUser(res);
-      console.log("user status:", res);
+      console.log(res);
+      localStorage.setItem("user", JSON.stringify(res));
     };
     getData();
   }, []);
@@ -29,7 +27,6 @@ export default function HomePage() {
   return (
     <div className="bg-slate-700 min-h-screen w-full">
       <Navbar ipAddress={user?.ipAddress} />
-      <div className="h-60"></div>
       <Content />
     </div>
   );
